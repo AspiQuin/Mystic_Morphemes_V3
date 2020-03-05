@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragMorpheme : MonoBehaviour
+public class DragMorpheme : MonoBehaviour, IDragHandler
 {
     bool isPicked;
 
@@ -40,11 +40,11 @@ public class DragMorpheme : MonoBehaviour
 
     //}
 
-    //public void OnDrag(PointerEventData eventData)
-    //{
+    public void OnDrag(PointerEventData eventData)
+    {
 
-    //    Debug.Log("test");
-    //    var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //    transform.position = position;
-    //}
+        Debug.Log("test");
+        var position = Input.mousePosition;
+        transform.position = position;
+    }
 }
