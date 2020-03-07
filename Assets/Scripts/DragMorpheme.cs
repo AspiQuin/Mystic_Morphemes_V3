@@ -75,38 +75,41 @@ public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (Vector2.Distance(spellSlots.transform.position, transform.position) < 100)
+        if (!isPicked)
         {
-            Debug.Log("test");
-            if (!slot1.GetComponent<SpellChoice>().isFilled)
+            if (Vector2.Distance(spellSlots.transform.position, transform.position) < 100)
             {
-                transform.position = slot1.transform.position;
-                slot1.GetComponent<SpellChoice>().isFilled = true;
-                slot1.GetComponent<SpellChoice>().chosenSpell = gameObject;
-                var newMorpheme = Instantiate(prefab, startPos, Quaternion.identity);
-                newMorpheme.name = gameObject.name;
-                newMorpheme.transform.parent = gameObject.transform.parent;
-                newMorpheme.transform.localScale = gameObject.transform.localScale;
-                gameObject.transform.localScale = new Vector2(2, 2);
-                startPos = gameObject.transform.position;
-                isPicked = true;
-            }
-            else if (!slot2.GetComponent<SpellChoice>().isFilled)
-            {
-                transform.position = slot2.transform.position;
-                slot2.GetComponent<SpellChoice>().isFilled = true;
-                slot2.GetComponent<SpellChoice>().chosenSpell = gameObject;
-                var newMorpheme = Instantiate(gameObject, startPos, Quaternion.identity);
-                newMorpheme.name = gameObject.name;
-                newMorpheme.transform.parent = gameObject.transform.parent;
-                newMorpheme.transform.localScale = gameObject.transform.localScale;
-                gameObject.transform.localScale = new Vector2(2, 2);
-                startPos = gameObject.transform.position;
-                isPicked = true;
-            }
-            else
-            {
-                gameObject.transform.position = startPos;
+                Debug.Log("test");
+                if (!slot1.GetComponent<SpellChoice>().isFilled)
+                {
+                    transform.position = slot1.transform.position;
+                    slot1.GetComponent<SpellChoice>().isFilled = true;
+                    slot1.GetComponent<SpellChoice>().chosenSpell = gameObject;
+                    var newMorpheme = Instantiate(prefab, startPos, Quaternion.identity);
+                    newMorpheme.name = gameObject.name;
+                    newMorpheme.transform.SetParent(gameObject.transform.parent);
+                    newMorpheme.transform.localScale = gameObject.transform.localScale;
+                    gameObject.transform.localScale = new Vector2(2, 2);
+                    startPos = gameObject.transform.position;
+                    isPicked = true;
+                }
+                else if (!slot2.GetComponent<SpellChoice>().isFilled)
+                {
+                    transform.position = slot2.transform.position;
+                    slot2.GetComponent<SpellChoice>().isFilled = true;
+                    slot2.GetComponent<SpellChoice>().chosenSpell = gameObject;
+                    var newMorpheme = Instantiate(gameObject, startPos, Quaternion.identity);
+                    newMorpheme.name = gameObject.name;
+                    newMorpheme.transform.SetParent(gameObject.transform.parent);
+                    newMorpheme.transform.localScale = gameObject.transform.localScale;
+                    gameObject.transform.localScale = new Vector2(2, 2);
+                    startPos = gameObject.transform.position;
+                    isPicked = true;
+                }
+                else
+                {
+                    gameObject.transform.position = startPos;
+                }
             }
         }
         else

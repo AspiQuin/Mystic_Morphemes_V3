@@ -16,7 +16,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            SceneManager.LoadScene("GameView");
+            SceneManager.LoadScene("Room1");
         }
     }
 }
