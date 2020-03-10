@@ -14,6 +14,7 @@ public class SceneChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check if the scene is changed
         if (Input.anyKey)
         {
             SceneManager.LoadScene("Room1");

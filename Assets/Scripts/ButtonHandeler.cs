@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class ButtonHandeler : MonoBehaviour
 {
-
+    //Parent object of the spell slots
     public GameObject spellSlots;
 
+    //Clear the objects in the spell slots
     public void canvasReset()
     {
+        //Clear slot 1
         Destroy(spellSlots.transform.Find("Slot1").GetComponent<SpellChoice>().chosenSpell);
         spellSlots.transform.Find("Slot1").GetComponent<SpellChoice>().isFilled = false;
+
+        //Clear Slot 2
         Destroy(spellSlots.transform.Find("Slot2").GetComponent<SpellChoice>().chosenSpell);
         spellSlots.transform.Find("Slot2").GetComponent<SpellChoice>().isFilled = false;
     }
