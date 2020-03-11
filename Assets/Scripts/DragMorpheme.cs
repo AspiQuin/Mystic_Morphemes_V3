@@ -83,6 +83,7 @@ public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
                 //If the first slot is not filled
                 if (!slot1.GetComponent<SpellChoice>().isFilled)
                 {
+
                     //set the position of the selected object ot the spell slot 1 position
                     transform.position = slot1.transform.position;
 
@@ -106,6 +107,7 @@ public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
                 }
                 else if (!slot2.GetComponent<SpellChoice>().isFilled)
                 {
+                    
                     //set the position of the selected object ot the spell slot 2 position
                     transform.position = slot2.transform.position;
 
@@ -130,13 +132,21 @@ public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
                 }
                 else
                 {
+                    //Debug.Log("test");
                     //return the object to the start position
                     gameObject.transform.position = startPos;
                 }
             }
+            else
+            {
+                //Debug.Log("test");
+                //return the object to the start position
+                gameObject.transform.position = startPos;
+            }
         }
         else
         {
+            //Debug.Log("test");
             //return the object to the start position
             gameObject.transform.position = startPos;
         }
