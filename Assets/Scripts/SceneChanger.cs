@@ -17,7 +17,7 @@ public class SceneChanger : MonoBehaviour
         //check if the scene is changed
         if (Input.anyKey)
         {
-            SceneManager.LoadScene("Room1");
+            SceneManager.LoadScene("Menu");
         }
     }
 }
