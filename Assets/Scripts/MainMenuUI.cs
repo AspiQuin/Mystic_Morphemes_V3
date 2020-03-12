@@ -24,12 +24,22 @@ public class MainMenuUI : MonoBehaviour
     
     public void Controls()
     {
-        //Nothing yet, making sure all works here
+         SceneManager.LoadScene("Controls");
     }
     
     public void ExitApp()
     {
         //Exits the application
         Application.Quit();
+    }
+    
+    public void Credits()
+    {
+         SceneManager.LoadScene("Credits");
+    }
+    
+    public void Back()
+    {
+         SceneManager.LoadScene("Menu");
     }
 }
