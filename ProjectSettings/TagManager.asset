@@ -6,6 +6,8 @@ TagManager:
   tags:
   - pause
   - resume
+  - death
+  - living
   layers:
   - Default
   - TransparentFX
