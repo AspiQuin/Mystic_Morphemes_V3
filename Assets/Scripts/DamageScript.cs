@@ -21,7 +21,9 @@ public class DamageScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        //Hey I changed this to key down because every time I clicked was getting annoying, so press
+        //H if you want health to go down
+        if(Input.GetKeyDown(KeyCode.H))
         {
             healthUI.GetComponent<HealthDisplay>().health -= 1;
         }
