@@ -67,7 +67,7 @@ public class GameMenu : MonoBehaviour
     
     public void Compendium()
     {
-        //We aren't incorporating this yet
+        //Not doing anything with this yet
     }
     
     public void RestartRoom()
