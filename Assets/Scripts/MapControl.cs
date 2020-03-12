@@ -14,7 +14,14 @@ public class MapControl : MonoBehaviour
 
     //What is the index of next level
     public int index;
-    
+
+    //string[,] array2Db = new string[5, 5] { { "one", "two" },
+    //    { "three", "four" },
+    //    { "five", "six" },
+    //    { "one", "two" },
+    //    { "three", "four" }};
+                                           
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +50,9 @@ public class MapControl : MonoBehaviour
                         //Do Do
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("Fire");
+
+
+
                         //THIS WILL CHANGE SCENE ONE TO SCENE TWO
                         Scene scene = SceneManager.GetActiveScene();
                         if (scene.name == "Room1")
