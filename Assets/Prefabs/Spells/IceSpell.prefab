@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7857537155790270806}
   - component: {fileID: 7857537155790270807}
   - component: {fileID: 7857537155790270804}
+  - component: {fileID: 962157779356479569}
+  - component: {fileID: 7147993994695258451}
   m_Layer: 0
   m_Name: IceSpell
   m_TagString: Untagged
@@ -67,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 595738389
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -3028196769903387791, guid: 6d0f35554e71cbd4b9b9d05558a70fac,
     type: 3}
@@ -101,3 +103,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &962157779356479569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7857537155790270805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed74c22b29f53da4abe197a4b302f54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeScene: 0
+--- !u!114 &7147993994695258451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7857537155790270805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15497e9a12f7c364d8e0811d839ae9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

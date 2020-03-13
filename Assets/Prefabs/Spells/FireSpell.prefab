@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2706549760484732347}
   - component: {fileID: 2706549760484732346}
   - component: {fileID: 2706549760484732345}
+  - component: {fileID: 908713505854568874}
+  - component: {fileID: 8011328170312465666}
   m_Layer: 0
   m_Name: FireSpell
   m_TagString: Untagged
@@ -67,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 595738389
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -4968008086504596477, guid: 4312324525ceef1419659fa8c7742928,
     type: 3}
@@ -101,3 +103,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &908713505854568874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706549760484732344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed74c22b29f53da4abe197a4b302f54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeScene: 0
+--- !u!114 &8011328170312465666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706549760484732344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15497e9a12f7c364d8e0811d839ae9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

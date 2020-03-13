@@ -2223,7 +2223,7 @@ RectTransform:
   - {fileID: 1753210941}
   - {fileID: 83824412}
   m_Father: {fileID: 2023736495}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2400,7 +2400,7 @@ GameObject:
   - component: {fileID: 239546044}
   - component: {fileID: 239546043}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Cast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2413,17 +2413,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239546041}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1265847333}
-  m_Father: {fileID: 2023736495}
-  m_RootOrder: 5
+  m_Father: {fileID: 1026412862}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 74}
+  m_AnchoredPosition: {x: 0.000030518, y: 70}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &239546043
@@ -3114,62 +3114,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507144420}
   m_CullTransparentMesh: 0
---- !u!1 &521818317
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 521818319}
-  - component: {fileID: 521818318}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &521818318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521818317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1db56b913ae96040be7209b3ea0ad95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Fire: {fileID: 2706549760484732344, guid: af6753e169bbf0342a57cf321f7cbfa5, type: 3}
-  Ice: {fileID: 7857537155790270805, guid: 2e5dce7170632fa4799e7457e2f0ca13, type: 3}
-  Lightning: {fileID: 7188092237419557522, guid: 5bc23e784ca0ecb42aef5fa91bfa98bf,
-    type: 3}
-  Snow: {fileID: 3589801615242584257, guid: 0e1cc98c427945648a7c21ca531ba21e, type: 3}
-  Water: {fileID: 4666423961626937554, guid: 7ae8adad97b3a0345ba0fbc4d55e91c6, type: 3}
-  Log: {fileID: 4840485805357448545, guid: 42aa15da66a75cb4c9840fe9a410f57c, type: 3}
-  Snake: {fileID: 2767150507204488500, guid: eaabfa2d0944b6b46ae7187d38062f79, type: 3}
-  Rock: {fileID: 8160520052673715812, guid: 920c8e06458529e4996d389cf7f3a03e, type: 3}
-  Flower: {fileID: 662031938204774073, guid: 65c76661456eb4e4db30fe64a630ce68, type: 3}
-  Bread: {fileID: 4162370346365133641, guid: 7df85e2b2672b8847a9a69a4db36a9c5, type: 3}
-  Fruit: {fileID: 2332797359875127807, guid: 085aae22ee6da5e48bd441419e68d621, type: 3}
-  Critter: {fileID: 2119639969122937846, guid: b277db32d0f5f4e488bbbae27b3b88b1, type: 3}
---- !u!4 &521818319
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521818317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.026349723, y: -5.1575265, z: -18.828558}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &526324210
 GameObject:
   m_ObjectHideFlags: 0
@@ -3380,7 +3324,7 @@ RectTransform:
   - {fileID: 1971628060}
   - {fileID: 1437136830}
   m_Father: {fileID: 2023736495}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3401,6 +3345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellSlots: {fileID: 0}
   index: 0
+  spellPos: {x: 0, y: 0}
 --- !u!1 &961816121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,10 +3657,12 @@ RectTransform:
   m_GameObject: {fileID: 1026412861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 367502210}
   - {fileID: 1500551381}
+  - {fileID: 239546042}
+  - {fileID: 2087259544}
   m_Father: {fileID: 1774152400}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5975,6 +5922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2021424091}
   - component: {fileID: 2021424090}
+  - component: {fileID: 2021424092}
   m_Layer: 0
   m_Name: SceneChanger
   m_TagString: Untagged
@@ -5996,6 +5944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellSlots: {fileID: 1026412861}
   index: 3
+  spellPos: {x: 0, y: 0}
 --- !u!4 &2021424091
 Transform:
   m_ObjectHideFlags: 0
@@ -6010,6 +5959,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2021424092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021424089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1db56b913ae96040be7209b3ea0ad95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fire: {fileID: 2706549760484732344, guid: af6753e169bbf0342a57cf321f7cbfa5, type: 3}
+  Ice: {fileID: 7857537155790270805, guid: 2e5dce7170632fa4799e7457e2f0ca13, type: 3}
+  Lightning: {fileID: 7188092237419557522, guid: 5bc23e784ca0ecb42aef5fa91bfa98bf,
+    type: 3}
+  Snow: {fileID: 3589801615242584257, guid: 0e1cc98c427945648a7c21ca531ba21e, type: 3}
+  Water: {fileID: 4666423961626937554, guid: 7ae8adad97b3a0345ba0fbc4d55e91c6, type: 3}
+  Log: {fileID: 4840485805357448545, guid: 42aa15da66a75cb4c9840fe9a410f57c, type: 3}
+  Snake: {fileID: 2767150507204488500, guid: eaabfa2d0944b6b46ae7187d38062f79, type: 3}
+  Rock: {fileID: 8160520052673715812, guid: 920c8e06458529e4996d389cf7f3a03e, type: 3}
+  Flower: {fileID: 662031938204774073, guid: 65c76661456eb4e4db30fe64a630ce68, type: 3}
+  Bread: {fileID: 4162370346365133641, guid: 7df85e2b2672b8847a9a69a4db36a9c5, type: 3}
+  Fruit: {fileID: 2332797359875127807, guid: 085aae22ee6da5e48bd441419e68d621, type: 3}
+  Critter: {fileID: 2119639969122937846, guid: b277db32d0f5f4e488bbbae27b3b88b1, type: 3}
 --- !u!1 &2023736491
 GameObject:
   m_ObjectHideFlags: 0
@@ -6103,9 +6077,7 @@ RectTransform:
   - {fileID: 1456475410}
   - {fileID: 1766416967}
   - {fileID: 1774152400}
-  - {fileID: 2087259544}
   - {fileID: 902003215}
-  - {fileID: 239546042}
   - {fileID: 152385265}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -6369,7 +6341,7 @@ GameObject:
   - component: {fileID: 2087259545}
   - component: {fileID: 2087259548}
   m_Layer: 5
-  m_Name: CAST
+  m_Name: Reset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6382,12 +6354,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087259543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426016168}
-  m_Father: {fileID: 2023736495}
+  m_Father: {fileID: 1026412862}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

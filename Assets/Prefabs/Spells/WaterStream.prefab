@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4666423961626937553}
   - component: {fileID: 4666423961626937552}
   - component: {fileID: 4666423961626937555}
+  - component: {fileID: 6487228562986460554}
+  - component: {fileID: 7146527306322035667}
   m_Layer: 0
   m_Name: WaterStream
   m_TagString: Untagged
@@ -67,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 595738389
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7196239783141572515, guid: 96a60dc6980e0c64f8738540d418773e,
     type: 3}
@@ -101,3 +103,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6487228562986460554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666423961626937554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed74c22b29f53da4abe197a4b302f54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeScene: 0
+--- !u!114 &7146527306322035667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666423961626937554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15497e9a12f7c364d8e0811d839ae9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

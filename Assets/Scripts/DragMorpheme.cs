@@ -101,7 +101,7 @@ public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
                     newMorpheme.transform.localScale = gameObject.transform.localScale;
 
                     //Change the object scale to represent that it is selected and change its starting position to the spell slot
-                    gameObject.transform.localScale = new Vector2(2, 2);
+                    gameObject.transform.localScale = new Vector2(1.5f, 1.5f);
                     startPos = gameObject.transform.position;
                     isPicked = true;
                 }
@@ -126,7 +126,7 @@ public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
                     newMorpheme.transform.localScale = gameObject.transform.localScale;
 
                     //Change the object scale to represent that it is selected and change its starting position to the spell slot
-                    gameObject.transform.localScale = new Vector2(2, 2);
+                    gameObject.transform.localScale = new Vector2(1.5f, 1.5f);
                     startPos = gameObject.transform.position;
                     isPicked = true;
                 }
