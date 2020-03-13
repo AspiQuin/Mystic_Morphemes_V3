@@ -76,6 +76,8 @@ public class MapControl : MonoBehaviour
                     {
                         //Do Mi
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
+                        spellPos.y += 0.75f;
+
                         Instantiate(GetComponent<PrefabController>().getPrefab("Lightning"), spellPos, Quaternion.identity);
 
                         Debug.Log ("Lightning");
@@ -249,7 +251,11 @@ public class MapControl : MonoBehaviour
                     {
                         //So Fa
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
+                        spellPos.y -= 0.5f;
+
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Bread"), spellPos, Quaternion.identity);
+
+
 
                         Debug.Log ("Bread");
                         //turns scene 3 to end
