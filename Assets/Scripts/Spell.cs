@@ -15,7 +15,7 @@ public class Spell : ScriptableObject
 
 	public void Print()
 	{
-		Debug.Log(name + ": " + description + " The spell does " + effect);
+		Debug.Log(name + ": " + description + " The spell creates " + effect);
 	}
 
 }
