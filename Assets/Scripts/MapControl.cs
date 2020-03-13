@@ -184,9 +184,11 @@ public class MapControl : MonoBehaviour
                         //Fa Re
                         Quaternion logQuaternion = new Quaternion();
 
-                        logQuaternion.Set(90, 0, 0, 1);
+                        logQuaternion.Set(-90, 90, 0, 1);
+
+                        spellPos.y = spellPos.y - 0.5f;
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
-                        Instantiate(GetComponent<PrefabController>().getPrefab("Log"), spellPos, logQuaternion);
+                        chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Log"), spellPos, logQuaternion);
 
                         
                         Debug.Log ("Log");
@@ -247,7 +249,7 @@ public class MapControl : MonoBehaviour
                     {
                         //So Fa
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
-                        Instantiate(GetComponent<PrefabController>().getPrefab("Bread"), spellPos, Quaternion.identity);
+                        chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Bread"), spellPos, Quaternion.identity);
 
                         Debug.Log ("Bread");
                         //turns scene 3 to end
