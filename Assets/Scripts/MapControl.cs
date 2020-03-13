@@ -76,7 +76,7 @@ public class MapControl : MonoBehaviour
                     {
                         //Do Mi
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
-                        spellPos.y += 0.75f;
+                        spellPos.y = 2.25f;
 
                         Instantiate(GetComponent<PrefabController>().getPrefab("Lightning"), spellPos, Quaternion.identity);
 
@@ -188,7 +188,7 @@ public class MapControl : MonoBehaviour
 
                         logQuaternion.Set(-90, 90, 0, 1);
 
-                        spellPos.y = spellPos.y - 0.5f;
+                        spellPos.y = 2.5f;
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Log"), spellPos, logQuaternion);
 
@@ -251,7 +251,7 @@ public class MapControl : MonoBehaviour
                     {
                         //So Fa
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
-                        spellPos.y -= 0.5f;
+                        spellPos.y = 2.5f;
 
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Bread"), spellPos, Quaternion.identity);
 
