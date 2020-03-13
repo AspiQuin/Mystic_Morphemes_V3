@@ -42,4 +42,14 @@ public class MainMenuUI : MonoBehaviour
     {
          SceneManager.LoadScene("Menu");
     }
+
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("IntroTutorial");
+    }
+
+    public void Letter()
+    {
+        SceneManager.LoadScene("Context Scene");
+    }
 }
