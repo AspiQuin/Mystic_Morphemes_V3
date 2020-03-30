@@ -13,10 +13,14 @@ public class ButtonHandeler : MonoBehaviour
         //Clear slot 1
         Destroy(spellSlots.transform.Find("Slot1").GetComponent<SpellChoice>().chosenSpell);
         spellSlots.transform.Find("Slot1").GetComponent<SpellChoice>().isFilled = false;
+        spellSlots.transform.Find("Slot1").GetComponent<SpellChoice>().first = true;
+
 
         //Clear Slot 2
         Destroy(spellSlots.transform.Find("Slot2").GetComponent<SpellChoice>().chosenSpell);
         spellSlots.transform.Find("Slot2").GetComponent<SpellChoice>().isFilled = false;
+        spellSlots.transform.Find("Slot2").GetComponent<SpellChoice>().first = true;
+
     }
     // Start is called before the first frame update
     void Start()

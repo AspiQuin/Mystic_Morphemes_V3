@@ -7,11 +7,18 @@ public class spellAnimation : MonoBehaviour
     float destroyTimer;
 
     public bool changeScene;
+
+    public GameObject puzzle;
+
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        puzzle = GameObject.FindGameObjectWithTag("puzzlePiece");
+        player = GameObject.FindGameObjectWithTag("living");
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -23,7 +30,13 @@ public class spellAnimation : MonoBehaviour
             Destroy(gameObject);
             if(changeScene)
             {
-                GetComponent<RoomChanger>().changeScene();
+                Destroy(puzzle);
+
+                player.GetComponent<PlayerMovement>().stopHeight = 10.0f;
+                player.GetComponent<PlayerMovement>().walkFrw = true;
+
+                player.GetComponent<PlayerMovement>().changeScene = true;
+                
             }
         }
     }

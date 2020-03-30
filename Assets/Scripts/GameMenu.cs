@@ -10,10 +10,9 @@ public class GameMenu : MonoBehaviour
     //create the menu objects for when our pause is clicked
     public GameObject[] pauseObjects;
     public GameObject[] resumeObjects;
-    public GameObject[] compendiumObjects;
     
-    public bool compendiumScene;
-    
+    public Scene currentScene;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +23,6 @@ public class GameMenu : MonoBehaviour
         foreach(GameObject g in resumeObjects){
             g.SetActive(true);
         }
-        foreach(GameObject g in compendiumObjects)
-        {
-            g.SetActive(false);
-        }
-        compendiumScene = false;
     }
 
     // Update is called once per frame
@@ -75,23 +69,10 @@ public class GameMenu : MonoBehaviour
     
     public void Compendium()
     {
-        if (compendiumScene == true)
-        {
-            compendiumScene = false;
-            foreach(GameObject g in compendiumObjects)
-            {
-                g.SetActive(false);
-            }
-            
-        }
-        else if (compendiumScene == false)
-        {
-            compendiumScene = true;
-            foreach(GameObject g in compendiumObjects)
-            {
-                g.SetActive(true);
-            }
-        }
+        currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene("Compendium");
+        
+
     }
     
     public void RestartRoom()
