@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    bool walkFrw = true;
+    public bool walkFrw = true;
 
     public float moveSpeed;
 
     public float stopHeight;
+
+    public bool changeScene = false;
+
+    float timer = 3.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while(walkFrw)
+        if(walkFrw)
         {
             transform.position = new Vector2(transform.position.x, transform.position.y + moveSpeed*Time.deltaTime);
             Debug.Log(transform.position.y);
@@ -26,7 +30,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 walkFrw = false;
             }
-            break;
+            if (changeScene)
+            {
+                timer -= Time.deltaTime;
+                if(timer < 0)
+                {
+                    GetComponent<RoomChanger>().changeScene();
+                }
+            }
         }
     }
 }
