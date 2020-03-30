@@ -4623,7 +4623,7 @@ PrefabInstance:
     - target: {fileID: 7390681411351363744, guid: 1588c9a42db3843478358f86da68878f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7390681411351363744, guid: 1588c9a42db3843478358f86da68878f,
         type: 3}
@@ -4708,7 +4708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -120}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1437136829
@@ -5431,7 +5431,7 @@ PrefabInstance:
     - target: {fileID: 7390681411351363744, guid: 1588c9a42db3843478358f86da68878f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7390681411351363744, guid: 1588c9a42db3843478358f86da68878f,
         type: 3}
@@ -5759,6 +5759,8 @@ MonoBehaviour:
   - {fileID: 462657635}
   resumeObjects:
   - {fileID: 1719660036}
+  currentScene:
+    m_Handle: 0
 --- !u!114 &1819844351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6567,7 +6569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkFrw: 1
   moveSpeed: 2
-  stopHeight: 1.8
+  stopHeight: 1
   changeScene: 0
 --- !u!114 &2006845851
 MonoBehaviour:
