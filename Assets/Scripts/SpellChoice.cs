@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpellChoice : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class SpellChoice : MonoBehaviour
 
     public GameObject effect;
 
+    float timer;
+
+    float sinTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +28,17 @@ public class SpellChoice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         if (isFilled && first)
         {
             effect.GetComponent<ParticleSystem>().Play();
             first = false;
+        }
+        sinTime = Mathf.Sin(timer * 5)*0.15f + 0.85f;
+        if(isFilled)
+        {
+            //Debug.Log(sinTime);
+            chosenSpell.GetComponent<Graphic>().color = new Color(sinTime, sinTime, sinTime);
         }
     }
 }
