@@ -11,6 +11,8 @@ public class spellAnimation : MonoBehaviour
     public GameObject puzzle;
 
     public GameObject player;
+
+    public ParticleSystem embers;
     // Start is called before the first frame update
     void Start()
     {

@@ -54,6 +54,7 @@ public class MapControl : MonoBehaviour
                         //Do Do
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("Fire");
+                        GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dodo = true;
 
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Fire"), spellPos, Quaternion.identity);
 
@@ -70,6 +71,7 @@ public class MapControl : MonoBehaviour
                         //Do Re
                        // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dore = true;
                         
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 3)
@@ -79,6 +81,7 @@ public class MapControl : MonoBehaviour
                         spellPos.y = 2.25f;
 
                         Instantiate(GetComponent<PrefabController>().getPrefab("Lightning"), spellPos, Quaternion.identity);
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().domi = true;
 
                         Debug.Log ("Lightning");
                     }
@@ -87,12 +90,14 @@ public class MapControl : MonoBehaviour
                         //Do Fa
                        // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dofa = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 5)
                     {
                         //Do So
                        // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().doso = true;
                     }
                     break;
 
@@ -103,6 +108,8 @@ public class MapControl : MonoBehaviour
                         //Re Do
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Water"), spellPos, Quaternion.identity);
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().redo = true;
 
                         Debug.Log ("Water");
                     }
@@ -111,6 +118,8 @@ public class MapControl : MonoBehaviour
                         //Re Re
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().rere = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 3)
                     {
@@ -118,6 +127,7 @@ public class MapControl : MonoBehaviour
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
 
                         Instantiate(GetComponent<PrefabController>().getPrefab("Ice"), spellPos, Quaternion.identity);
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().remi = true;
 
                         Debug.Log ("Ice");
                     }
@@ -126,6 +136,8 @@ public class MapControl : MonoBehaviour
                         //Re Fa
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Snow"), spellPos, Quaternion.identity);
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().refa = true;
 
                         Debug.Log ("Snow");
                     }
@@ -133,6 +145,8 @@ public class MapControl : MonoBehaviour
                     {
                         //Re So
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().reso = true;
                         Debug.Log ("NULL");
                     }
                     break;
@@ -143,6 +157,9 @@ public class MapControl : MonoBehaviour
                     {
                         //Mi Do
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mido = true;
+                         
                         Debug.Log ("NULL");
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 2)
@@ -150,12 +167,16 @@ public class MapControl : MonoBehaviour
                         //Mi Re
                        // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mire = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 3)
                     {
                         //Mi Mi
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Rock"), spellPos, Quaternion.identity);
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mimi = true;
 
                         Debug.Log ("Rock");
                     }
@@ -164,12 +185,16 @@ public class MapControl : MonoBehaviour
                         //Mi Fa
                        // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mifa = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 5)
                     {
                         //Mi So
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("Turtle?");
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().miso = true;
                     }
                     break;
 
@@ -180,6 +205,8 @@ public class MapControl : MonoBehaviour
                         //Fa Do
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fado = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 2)
                     {
@@ -192,6 +219,8 @@ public class MapControl : MonoBehaviour
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Log"), spellPos, logQuaternion);
 
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fare = true;
                         
                         Debug.Log ("Log");
                         //turns scene 2 to scene 3
@@ -206,12 +235,16 @@ public class MapControl : MonoBehaviour
                         //Fa Mi
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fami = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 4)
                     {
                         //Fa Fa
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Fruit"), spellPos, Quaternion.identity);
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fafa = true;
 
                         Debug.Log ("Fruit");
                     }
@@ -220,6 +253,8 @@ public class MapControl : MonoBehaviour
                         //Fa So
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Flower"), spellPos, Quaternion.identity);
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().faso = true;
 
                         Debug.Log ("Flower");
                     }
@@ -232,12 +267,16 @@ public class MapControl : MonoBehaviour
                         //So Do
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().sodo = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 2)
                     {
                         //So Re
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Snake"), spellPos, Quaternion.identity);
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().sore = true;
 
                         Debug.Log ("Snake");
                     }
@@ -246,6 +285,8 @@ public class MapControl : MonoBehaviour
                         //So Mi
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().somi = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 4)
                     {
@@ -254,6 +295,8 @@ public class MapControl : MonoBehaviour
                         spellPos.y = 2.5f;
 
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Bread"), spellPos, Quaternion.identity);
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().sofa = true;
 
 
 
@@ -271,6 +314,8 @@ public class MapControl : MonoBehaviour
                         //So So
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Critter"), spellPos, Quaternion.identity);
+                        
+                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().soso = true;
 
                         Debug.Log ("Critter");
                     }
