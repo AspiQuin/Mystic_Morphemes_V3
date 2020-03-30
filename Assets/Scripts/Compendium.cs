@@ -36,6 +36,33 @@ public class Compendium : MonoBehaviour
         pageoneStatus = true;
         pagetwoStatus = false;
         pagethreeStatus = false;
+        
+        //Checking for Do Spells
+            if (GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dodo == true)
+            {
+                GameObject.Find("DoDo").GetComponent<Text>().text = "Do + Do = fire!";
+            }
+
+            if (GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dore == true)
+            {
+                GameObject.Find("DoRe").GetComponent<Text>().text = "Do + Re = null...";
+            }
+
+            if (GameObject.Find("SpellsDone").GetComponent<DoneSpell>().domi == true)
+            {
+                GameObject.Find("DoMi").GetComponent<Text>().text = "Do + Mi = lightning!";
+            }
+
+            if (GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dofa == true)
+            {
+                GameObject.Find("DoFa").GetComponent<Text>().text = "Do + Fa = null...";
+            }
+
+            if (GameObject.Find("SpellsDone").GetComponent<DoneSpell>().doso == true)
+            {
+                GameObject.Find("DoSo").GetComponent<Text>().text = "Do + So = null...";
+            }
+            
 
     }
 
