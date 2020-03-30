@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         if(walkFrw)
         {
             transform.position = new Vector2(transform.position.x, transform.position.y + moveSpeed*Time.deltaTime);
-            Debug.Log(transform.position.y);
+            //Debug.Log(transform.position.y);
             if(transform.position.y > stopHeight)
             {
                 walkFrw = false;
