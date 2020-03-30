@@ -10,8 +10,7 @@ public class GameMenu : MonoBehaviour
     //create the menu objects for when our pause is clicked
     public GameObject[] pauseObjects;
     public GameObject[] resumeObjects;
-    
-    public Scene currentScene;
+
  
     // Start is called before the first frame update
     void Start()
@@ -23,6 +22,8 @@ public class GameMenu : MonoBehaviour
         foreach(GameObject g in resumeObjects){
             g.SetActive(true);
         }
+        
+        DontDestroyOnLoad(GameObject.Find("GameMenu"));
     }
 
     // Update is called once per frame
@@ -69,10 +70,7 @@ public class GameMenu : MonoBehaviour
     
     public void Compendium()
     {
-        currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene("Compendium");
-        
-
     }
     
     public void RestartRoom()
