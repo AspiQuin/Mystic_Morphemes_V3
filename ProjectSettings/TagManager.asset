@@ -8,6 +8,7 @@ TagManager:
   - resume
   - death
   - living
+  - puzzlePiece
   layers:
   - Default
   - TransparentFX
@@ -51,6 +52,6 @@ TagManager:
   - name: Player
     uniqueID: 4001125949
     locked: 0
-  - name: UI
-    uniqueID: 796708833
+  - name: Particle
+    uniqueID: 1053357777
     locked: 0
