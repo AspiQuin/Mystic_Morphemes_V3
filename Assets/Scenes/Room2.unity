@@ -5803,8 +5803,6 @@ MonoBehaviour:
   - {fileID: 462657635}
   resumeObjects:
   - {fileID: 1719660036}
-  currentScene:
-    m_Handle: 0
 --- !u!114 &1819844351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6175,7 +6173,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: To Map
 --- !u!222 &1953455335
 CanvasRenderer:
   m_ObjectHideFlags: 0

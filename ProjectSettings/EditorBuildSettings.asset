@@ -41,4 +41,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Compendium.unity
     guid: de6f3ef142aef4853a76b8a4b7b0ba15
+  - enabled: 1
+    path: Assets/Scenes/MapScene.unity
+    guid: 10a9d88b42e434fc0841b5e36c71c350
+  - enabled: 1
+    path: Assets/Scenes/FireLavaRoom3.unity
+    guid: 2bd8c2f6e38145b459f879e581ffe71b
+  - enabled: 1
+    path: Assets/Scenes/FireTorchRoom1.unity
+    guid: bf220a1859d2a0f4b9c98f9630fc959f
+  - enabled: 1
+    path: Assets/Scenes/Fire Column Room2.unity
+    guid: 3c564c3a2f86c874188c492d894f693b
+  - enabled: 1
+    path: Assets/Scenes/NatureCritterRoom2.unity
+    guid: 3e40f22f691c8434b9cb08ee5ed7aa3c
+  - enabled: 1
+    path: Assets/Scenes/NatureDyingRoom1.unity
+    guid: ceb8bdccbb4cb0a45b9b9831288870b6
+  - enabled: 1
+    path: Assets/Scenes/NatureTreeRoom3.unity
+    guid: b237c90cbe1223447a23cabaace975dd
   m_configObjects: {}
