@@ -20,8 +20,32 @@ public class RoomChanger : MonoBehaviour
                 SceneManager.LoadScene("Room3");
                 break;
             case "Room3":
-                SceneManager.LoadScene("EndScene");
+                SceneManager.LoadScene("MapScene");
                 break;
+            case "FireTorchRoom1":
+                GameObject.Find("DontDestroy").GetComponent<Current>().currentScene = "Fire Column Room2";
+                SceneManager.LoadScene("Fire Column Room2");
+                break;
+            case "Fire Column Room2":
+                GameObject.Find("DontDestroy").GetComponent<Current>().currentScene = "FireLavaRoom3";
+                SceneManager.LoadScene("FireLavaRoom3");
+                break;
+            case "FireLavaRoom3":
+                SceneManager.LoadScene("MapScene");
+                break;
+            case "NatureDyingRoom1":
+                GameObject.Find("DontDestroy").GetComponent<Current>().currentScene = "NatureCritterRoom2";
+                SceneManager.LoadScene("NatureCritterRoom2");
+                break;
+            case "NatureCritterRoom2":
+                GameObject.Find("DontDestroy").GetComponent<Current>().currentScene = "NatureTreeRoom3";
+                SceneManager.LoadScene("NatureTreeRoom3");
+                break;
+            case "NatureTreeRoom3":
+                SceneManager.LoadScene("MapScene");
+                break;   
+            
+            
             default:
                 Debug.Log("No Change: add new case");
                 break;
