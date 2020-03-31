@@ -12,12 +12,15 @@ public class Current : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene().name;
         DontDestroyOnLoad(this.gameObject);
-        Debug.Log(currentScene);
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

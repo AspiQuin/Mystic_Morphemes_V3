@@ -9,6 +9,8 @@ TagManager:
   - death
   - living
   - puzzlePiece
+  - music
+  - music_dest
   layers:
   - Default
   - TransparentFX
