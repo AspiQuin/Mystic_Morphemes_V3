@@ -56,11 +56,13 @@ public class MainMenuUI : MonoBehaviour
     public void FireDungeon()
     {
         SceneManager.LoadScene("FireTorchRoom1");
+        GameObject.Find("DontDestroy").GetComponent<Current>().currentScene = "FireTorchRoom1";
     }
     
     public void NatureDungeon()
     {
         SceneManager.LoadScene("NatureDyingRoom1");
+        GameObject.Find("DontDestroy").GetComponent<Current>().currentScene = "NatureDyingRoom1";
     }
     
     public void TrialDungeon()

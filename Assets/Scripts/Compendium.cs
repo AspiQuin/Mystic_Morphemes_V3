@@ -77,8 +77,6 @@ public class Compendium : MonoBehaviour
         //take the public current scene and reload it
         //Make use of Don'tDestroyOnLoad
         SceneManager.LoadScene(GameObject.Find("DontDestroy").GetComponent<Current>().currentScene);
-        
-        Destroy(GameObject.Find("DontDestroy"));
             
     }
     
