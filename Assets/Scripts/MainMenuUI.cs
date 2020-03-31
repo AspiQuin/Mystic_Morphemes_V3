@@ -19,7 +19,7 @@ public class MainMenuUI : MonoBehaviour
     
     public void PlayGame()
     {
-        SceneManager.LoadScene("Room1");
+        SceneManager.LoadScene("MapScene");
     }
     
     public void Controls()
@@ -51,5 +51,20 @@ public class MainMenuUI : MonoBehaviour
     public void Letter()
     {
         SceneManager.LoadScene("Context Scene");
+    }
+    
+    public void FireDungeon()
+    {
+        SceneManager.LoadScene("FireTorchRoom1");
+    }
+    
+    public void NatureDungeon()
+    {
+        SceneManager.LoadScene("NatureDyingRoom1");
+    }
+    
+    public void TrialDungeon()
+    {
+        SceneManager.LoadScene("Room1");
     }
 }

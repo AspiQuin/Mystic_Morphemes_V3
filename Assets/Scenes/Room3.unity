@@ -3334,7 +3334,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: To Map
 --- !u!222 &764786993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5472,8 +5472,6 @@ MonoBehaviour:
   - {fileID: 1128157754}
   resumeObjects:
   - {fileID: 2094504283}
-  currentScene:
-    m_Handle: 0
 --- !u!114 &1641008282
 MonoBehaviour:
   m_ObjectHideFlags: 0

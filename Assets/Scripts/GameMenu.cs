@@ -65,7 +65,8 @@ public class GameMenu : MonoBehaviour
     public void MainMenu()
     {
         //should incorporate a "are you sure you wish to proceed" option!!!
-        SceneManager.LoadScene("Menu");
+        //Changed this to back to map - you can go to the menu from there
+        SceneManager.LoadScene("MapScene");
     }
     
     public void Compendium()
