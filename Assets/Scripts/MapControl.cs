@@ -91,6 +91,13 @@ public class MapControl : MonoBehaviour
                          GameObject.Find("SpellsDone").GetComponent<DoneSpell>().domi = true;
 
                         Debug.Log ("Lightning");
+                        
+                        //Should be changing scene 1 to scene 2...
+                        Scene scene = SceneManager.GetActiveScene();
+                        if (scene.name == "Room1")
+                        {
+                            chosenPrefab.GetComponent<spellAnimation>().changeScene = true;
+                        }
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 4)
                     {
