@@ -6610,6 +6610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkFrw: 1
+  dudSpell: 0
   moveSpeed: 2
   stopHeight: 1
   changeScene: 0
