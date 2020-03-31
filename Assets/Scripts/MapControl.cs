@@ -64,7 +64,7 @@ public class MapControl : MonoBehaviour
 
                         //THIS WILL CHANGE SCENE ONE TO SCENE TWO
                         Scene scene = SceneManager.GetActiveScene();
-                        if (scene.name == "Room1")
+                        if (scene.name == "Room1" || scene.name == "FireTorchRoom1"  || scene.name == "NatureTreeRoom3")
                         {
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true;
                         }
@@ -93,10 +93,12 @@ public class MapControl : MonoBehaviour
                         Debug.Log ("Lightning");
                         
                         //Should be changing scene 1 to scene 2...
+                        chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Lightning"), spellPos, Quaternion.identity);
+
                         Scene scene = SceneManager.GetActiveScene();
-                        if (scene.name == "Room1")
+                        if (scene.name == "Room1" || scene.name == "FireTorchRoom1"  || scene.name == "NatureTreeRoom3")
                         {
-                            chosenPrefab.GetComponent<spellAnimation>().changeScene = true;
+                            chosenPrefab.GetComponent<spellAnimation>().changeScene = true;  //The issue's here...
                         }
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 4)
@@ -130,6 +132,16 @@ public class MapControl : MonoBehaviour
                          GameObject.Find("SpellsDone").GetComponent<DoneSpell>().redo = true;
 
                         Debug.Log ("Water");
+
+                        //Should be activating scene change
+                        chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Water"), spellPos, Quaternion.identity);
+
+                        Scene scene = SceneManager.GetActiveScene();
+                        if (scene.name == "Fire Column Room2" || scene.name == "NatureDyingRoom1")
+                        {
+                            chosenPrefab.GetComponent<spellAnimation>().changeScene = true;  //The issue's here...
+                        }
+
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 2)
                     {
@@ -150,6 +162,16 @@ public class MapControl : MonoBehaviour
                          GameObject.Find("SpellsDone").GetComponent<DoneSpell>().remi = true;
 
                         Debug.Log ("Ice");
+
+                        //Should be changing scene 1 to scene 2...
+                        chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Ice"), spellPos, Quaternion.identity);
+
+                        Scene scene = SceneManager.GetActiveScene();
+                        if (scene.name == "Room2")
+                        {
+                            chosenPrefab.GetComponent<spellAnimation>().changeScene = true;  //The issue's here...
+                        }
+
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 4)
                     {
