@@ -7,10 +7,12 @@ public class Current : MonoBehaviour
 {
 
     public string currentScene;
+    public int wins;
     // Start is called before the first frame update
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().name;
+        wins = 0;
         DontDestroyOnLoad(this.gameObject);
         if (FindObjectsOfType(GetType()).Length > 1)
         {
