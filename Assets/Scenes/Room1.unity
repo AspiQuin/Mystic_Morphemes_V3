@@ -6054,7 +6054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkFrw: 1
   moveSpeed: 2
-  stopHeight: 1
+  stopHeight: 0.6
   changeScene: 0
 --- !u!114 &1846106021
 MonoBehaviour:
