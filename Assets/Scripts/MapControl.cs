@@ -8,6 +8,8 @@ public class MapControl : MonoBehaviour
     //the spell slot container
     public GameObject spellSlots;
 
+    GameObject player;
+
     //the individual spell sleot variable declaration
     GameObject slot1;
     GameObject slot2;
@@ -29,6 +31,8 @@ public class MapControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("living");
+
         //spellSlots = gameObject.transform.parent.transform.Find("SpellSlots").gameObject;
         slot1 = spellSlots.transform.Find("Slot1").gameObject;
 
@@ -71,6 +75,9 @@ public class MapControl : MonoBehaviour
                         //Do Re
                        // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
+
                          GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dore = true;
                         
                     }
@@ -90,14 +97,18 @@ public class MapControl : MonoBehaviour
                         //Do Fa
                        // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
-                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dofa = true;
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
+                        GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dofa = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 5)
                     {
                         //Do So
                        // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
-                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().doso = true;
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
+                        GameObject.Find("SpellsDone").GetComponent<DoneSpell>().doso = true;
                     }
                     break;
 
@@ -118,8 +129,10 @@ public class MapControl : MonoBehaviour
                         //Re Re
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
-                        
-                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().rere = true;
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
+
+                        GameObject.Find("SpellsDone").GetComponent<DoneSpell>().rere = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 3)
                     {
@@ -148,6 +161,8 @@ public class MapControl : MonoBehaviour
                         
                          GameObject.Find("SpellsDone").GetComponent<DoneSpell>().reso = true;
                         Debug.Log ("NULL");
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
                     }
                     break;
 
@@ -161,6 +176,8 @@ public class MapControl : MonoBehaviour
                          GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mido = true;
                          
                         Debug.Log ("NULL");
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 2)
                     {
@@ -169,6 +186,8 @@ public class MapControl : MonoBehaviour
                         Debug.Log ("NULL");
                         
                          GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mire = true;
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 3)
                     {
@@ -185,8 +204,9 @@ public class MapControl : MonoBehaviour
                         //Mi Fa
                        // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
-                        
-                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mifa = true;
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
+                        GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mifa = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 5)
                     {
@@ -207,6 +227,8 @@ public class MapControl : MonoBehaviour
                         Debug.Log ("NULL");
                         
                          GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fado = true;
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 2)
                     {
@@ -237,6 +259,8 @@ public class MapControl : MonoBehaviour
                         Debug.Log ("NULL");
                         
                          GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fami = true;
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 4)
                     {
@@ -269,6 +293,8 @@ public class MapControl : MonoBehaviour
                         Debug.Log ("NULL");
                         
                          GameObject.Find("SpellsDone").GetComponent<DoneSpell>().sodo = true;
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 2)
                     {
@@ -286,7 +312,9 @@ public class MapControl : MonoBehaviour
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
                         
-                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().somi = true;
+                        GameObject.Find("SpellsDone").GetComponent<DoneSpell>().somi = true;
+
+                        player.GetComponent<PlayerMovement>().dudSpell = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 4)
                     {

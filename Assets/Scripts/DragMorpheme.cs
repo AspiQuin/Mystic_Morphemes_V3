@@ -11,6 +11,8 @@ public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
     //saves the start position of the tile so it can return to its starting position
     Vector2 startPos;
 
+    
+
     //spell Slots parent object
     GameObject spellSlots;
 
@@ -27,6 +29,8 @@ public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
     // Start is called before the first frame update
     void Start()
     {
+        
+
         //Initialize relevent variables
         spellSlots = gameObject.transform.parent.transform.Find("SpellSlots").gameObject;
 
