@@ -26,6 +26,7 @@ public class Current : MonoBehaviour
         if (wins == 3)
         {
            SceneManager.LoadScene("EndScene");
+           wins = 0;
         }
     }
 }
