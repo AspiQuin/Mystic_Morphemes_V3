@@ -10,6 +10,8 @@ public class GameMenu : MonoBehaviour
     //create the menu objects for when our pause is clicked
     public GameObject[] pauseObjects;
     public GameObject[] resumeObjects;
+    public GameObject[] escapeObjects;
+    
 
  
     // Start is called before the first frame update
@@ -22,6 +24,9 @@ public class GameMenu : MonoBehaviour
         foreach(GameObject g in resumeObjects){
             g.SetActive(true);
         }
+        foreach(GameObject g in escapeObjects){
+            g.SetActive(false);
+        }
         
         DontDestroyOnLoad(GameObject.Find("GameMenu"));
     }
@@ -32,8 +37,23 @@ public class GameMenu : MonoBehaviour
         //Allows for a backup escape from the application
         if (Input.GetKey("escape"))
         {
-            Application.Quit();
+            foreach(GameObject g in escapeObjects){
+                g.SetActive(true);
+            }
         }
+    }
+    
+    public void HideEsc()
+    {
+        
+        foreach(GameObject g in escapeObjects){
+            g.SetActive(false);
+        }
+    }
+    
+    public void Esc()
+    {
+        Application.Quit();
     }
     
     
