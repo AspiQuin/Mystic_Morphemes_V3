@@ -23,6 +23,9 @@ public class Current : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (wins == 3)
+        {
+           SceneManager.LoadScene("EndScene");
+        }
     }
 }
