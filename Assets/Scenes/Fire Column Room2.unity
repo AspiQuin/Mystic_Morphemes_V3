@@ -3519,7 +3519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseObjects:
-  - {fileID: 98057627}
   - {fileID: 113970933}
   - {fileID: 1820956553}
   - {fileID: 161451183}
