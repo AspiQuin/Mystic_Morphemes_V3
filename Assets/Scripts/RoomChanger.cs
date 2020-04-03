@@ -26,7 +26,7 @@ public class RoomChanger : MonoBehaviour
                     SceneManager.LoadScene("Room3");
                     break;
                 case "Room3":
-                    GameObject.Find("DontDestroy").GetComponent<Current>().wins += 1;
+                    GameObject.Find("DontDestroy").GetComponent<Current>().wins ++;
                     SceneManager.LoadScene("MapScene");
                     break;
                 case "FireTorchRoom1":
@@ -38,7 +38,7 @@ public class RoomChanger : MonoBehaviour
                     SceneManager.LoadScene("FireLavaRoom3");
                     break;
                 case "FireLavaRoom3":
-                    GameObject.Find("DontDestroy").GetComponent<Current>().wins += 1;
+                    GameObject.Find("DontDestroy").GetComponent<Current>().wins ++;
                     SceneManager.LoadScene("MapScene");
                     break;
                 case "NatureDyingRoom1":
@@ -50,7 +50,7 @@ public class RoomChanger : MonoBehaviour
                     SceneManager.LoadScene("NatureTreeRoom3");
                     break;
                 case "NatureTreeRoom3":
-                    GameObject.Find("DontDestroy").GetComponent<Current>().wins += 1;
+                    GameObject.Find("DontDestroy").GetComponent<Current>().wins ++;
                     SceneManager.LoadScene("MapScene");
                     break;   
 
