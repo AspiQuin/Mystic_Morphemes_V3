@@ -80,7 +80,7 @@ public class DragMorpheme : MonoBehaviour,  IPointerClickHandler
     //After the dragging of the UI element is finished run this code
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("test");
+        //Debug.Log("test");
 
         //If an spell has not already been used
         //prevents duplicatioon bug
@@ -88,7 +88,7 @@ public class DragMorpheme : MonoBehaviour,  IPointerClickHandler
         {
             //Check that the distance from the spell slots is within a certain value
 
-            Debug.Log("test");
+            //Debug.Log("test");
             //If the first slot is not filled
             if (!slot1.GetComponent<SpellChoice>().isFilled)
             {

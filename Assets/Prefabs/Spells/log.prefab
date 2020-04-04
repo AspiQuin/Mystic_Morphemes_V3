@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeScene: 0
+  puzzle: {fileID: 0}
+  player: {fileID: 0}
+  embers: {fileID: 0}
+  permenent: 1
 --- !u!114 &6565043291257459114
 MonoBehaviour:
   m_ObjectHideFlags: 0
