@@ -75,7 +75,7 @@ public class MapControl : MonoBehaviour
 
                         //THIS WILL CHANGE SCENE ONE TO SCENE TWO
                         Scene scene = SceneManager.GetActiveScene();
-                        if (scene.name == "Room1" || scene.name == "FireTorchRoom1"  || scene.name == "NatureTreeRoom3")
+                        if (scene.name == "Room1" || scene.name == "FireTorchRoom1"  || scene.name == "NatureTreeRoom3" || scene.name == "Room3")
                         {
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true;
                         }

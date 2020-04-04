@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
+public class DragMorpheme : MonoBehaviour,  IPointerClickHandler
 {
     //Variable dictating whether a tile has been selected
     bool isPicked;
@@ -44,6 +44,10 @@ public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
     // Update is called once per frame
     void Update()
     {
+        //if (Input.GetMouseButtonDown(0))
+        //{
+
+        //}
         //Vector2 pos = Camera.main.WorldToScreenPoint(Input.mousePosition);
         //transform.position = pos;
 
@@ -60,86 +64,80 @@ public class DragMorpheme : MonoBehaviour, IDragHandler, IEndDragHandler
     //}
 
     //detects if I UI element is getting clicked on and dragged around
-    public void OnDrag(PointerEventData eventData)
-    {
+    //public void OnDrag(PointerEventData eventData)
+    //{
 
-        //Debug.Log("test");
-        //check if the morpheme has already been picked for use
-        if (!isPicked)
-        {
-            //set the position of the morpheme to the mouse position 
-            var position = Input.mousePosition;
-            transform.position = position;
-        }
-    }
+    //    //Debug.Log("test");
+    //    //check if the morpheme has already been picked for use
+    //    if (!isPicked)
+    //    {
+    //        //set the position of the morpheme to the mouse position 
+    //        var position = Input.mousePosition;
+    //        transform.position = position;
+    //    }
+    //}
 
     //After the dragging of the UI element is finished run this code
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("test");
+
         //If an spell has not already been used
         //prevents duplicatioon bug
         if (!isPicked)
         {
             //Check that the distance from the spell slots is within a certain value
-            if (Vector2.Distance(spellSlots.transform.position, transform.position) < 100)
+
+            Debug.Log("test");
+            //If the first slot is not filled
+            if (!slot1.GetComponent<SpellChoice>().isFilled)
             {
-                //Debug.Log("test");
-                //If the first slot is not filled
-                if (!slot1.GetComponent<SpellChoice>().isFilled)
-                {
 
-                    //set the position of the selected object ot the spell slot 1 position
-                    transform.position = slot1.transform.position;
+                //set the position of the selected object ot the spell slot 1 position
+                transform.position = slot1.transform.position;
 
-                    //Set the slot data to the relevent variables
-                    slot1.GetComponent<SpellChoice>().isFilled = true;
-                    slot1.GetComponent<SpellChoice>().chosenSpell = gameObject;
+                //Set the slot data to the relevent variables
+                slot1.GetComponent<SpellChoice>().isFilled = true;
+                slot1.GetComponent<SpellChoice>().chosenSpell = gameObject;
 
-                    //create a new tile in the start position for the selected tile
-                    var newMorpheme = Instantiate(prefab, startPos, Quaternion.identity);
+                //create a new tile in the start position for the selected tile
+                var newMorpheme = Instantiate(prefab, startPos, Quaternion.identity);
 
-                    //Prevent clone naming
-                    newMorpheme.name = gameObject.name;
-                    //set the new object to the UI parent and resize
-                    newMorpheme.transform.SetParent(gameObject.transform.parent);
-                    newMorpheme.transform.localScale = gameObject.transform.localScale;
+                //Prevent clone naming
+                newMorpheme.name = gameObject.name;
+                //set the new object to the UI parent and resize
+                newMorpheme.transform.SetParent(gameObject.transform.parent);
+                newMorpheme.transform.localScale = gameObject.transform.localScale;
 
-                    //Change the object scale to represent that it is selected and change its starting position to the spell slot
-                    gameObject.transform.localScale = new Vector2(1.5f, 1.5f);
-                    startPos = gameObject.transform.position;
-                    isPicked = true;
-                }
-                else if (!slot2.GetComponent<SpellChoice>().isFilled)
-                {
-                    
-                    //set the position of the selected object ot the spell slot 2 position
-                    transform.position = slot2.transform.position;
+                //Change the object scale to represent that it is selected and change its starting position to the spell slot
+                gameObject.transform.localScale = new Vector2(1.5f, 1.5f);
+                startPos = gameObject.transform.position;
+                isPicked = true;
+            }
+            else if (!slot2.GetComponent<SpellChoice>().isFilled)
+            {
 
-                    //Set the slot data to the relevent variables
-                    slot2.GetComponent<SpellChoice>().isFilled = true;
-                    slot2.GetComponent<SpellChoice>().chosenSpell = gameObject;
+                //set the position of the selected object ot the spell slot 2 position
+                transform.position = slot2.transform.position;
 
-                    //create a new tile in the start position for the selected tile
-                    var newMorpheme = Instantiate(gameObject, startPos, Quaternion.identity);
+                //Set the slot data to the relevent variables
+                slot2.GetComponent<SpellChoice>().isFilled = true;
+                slot2.GetComponent<SpellChoice>().chosenSpell = gameObject;
 
-                    //Prevent clone naming
-                    newMorpheme.name = gameObject.name;
+                //create a new tile in the start position for the selected tile
+                var newMorpheme = Instantiate(gameObject, startPos, Quaternion.identity);
 
-                    //set the new object to the UI parent and resize
-                    newMorpheme.transform.SetParent(gameObject.transform.parent);
-                    newMorpheme.transform.localScale = gameObject.transform.localScale;
+                //Prevent clone naming
+                newMorpheme.name = gameObject.name;
 
-                    //Change the object scale to represent that it is selected and change its starting position to the spell slot
-                    gameObject.transform.localScale = new Vector2(1.5f, 1.5f);
-                    startPos = gameObject.transform.position;
-                    isPicked = true;
-                }
-                else
-                {
-                    //Debug.Log("test");
-                    //return the object to the start position
-                    gameObject.transform.position = startPos;
-                }
+                //set the new object to the UI parent and resize
+                newMorpheme.transform.SetParent(gameObject.transform.parent);
+                newMorpheme.transform.localScale = gameObject.transform.localScale;
+
+                //Change the object scale to represent that it is selected and change its starting position to the spell slot
+                gameObject.transform.localScale = new Vector2(1.5f, 1.5f);
+                startPos = gameObject.transform.position;
+                isPicked = true;
             }
             else
             {
