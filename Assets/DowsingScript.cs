@@ -37,30 +37,11 @@ public class DowsingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDowsing && !putOut)
-        {
-            //Debug.Log("test1");
-
-            //particle.Play();
-            //particle = Instantiate(particle, transform.position, Quaternion.identity);
-            //particle.transform.parent = gameObject.transform;
-
-            putOut = true;
-
-        }
-        
+        //
         if (isDowsing && count < 3)
         {
             timer -= Time.deltaTime;
-            //Debug.Log("test2");
-
-            //transform.localScale -= transform.localScale * changeSpeed * Time.deltaTime;
-            //particle.transform.localPosition = new Vector2(0, 0.2f + moveParticle);
-
-            //if (!particle.isEmitting)
-            //{
-            //    //Debug.Log("test3");
-            //    GetComponent<SpriteRenderer>().color = new Vector4(red, green, blue, alpha);
+            
             if (shrinks && timer > 0)
             {
                 transform.localScale -= transform.localScale * changeSpeed * Time.deltaTime;
@@ -79,10 +60,6 @@ public class DowsingScript : MonoBehaviour
             damage.GetComponent<DamageScript>().takeDamage(1);
             isDowsing = false;
         }
-            //}
 
-
-        
-        
     }
 }

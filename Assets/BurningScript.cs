@@ -75,7 +75,7 @@ public class BurningScript : MonoBehaviour
                 particle.transform.localPosition = new Vector2(0, 0.2f + moveParticle);
             }
             
-
+            //if the particle effect is finished change color and opacity
             if(!particle.isEmitting)
             {
                 //Debug.Log("test3");

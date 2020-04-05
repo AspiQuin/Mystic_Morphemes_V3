@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //if player is dead play death animation
         if(health.GetComponent<HealthDisplay>().health <= 0)
         {
             animator.SetBool("dead", true);
@@ -49,9 +49,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        //comunicates with the animator
         animator.SetBool("walking", walkFrw);
 
         animator.SetBool("dud", dudSpell);
+
+        //moves player
         if (walkFrw)
         {
             delay -= Time.deltaTime;
