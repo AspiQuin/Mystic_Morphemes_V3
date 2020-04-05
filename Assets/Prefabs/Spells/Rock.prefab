@@ -99,6 +99,7 @@ MonoBehaviour:
   puzzle: {fileID: 0}
   player: {fileID: 0}
   embers: {fileID: 0}
+  permenent: 1
 --- !u!114 &-3176788308924457089
 MonoBehaviour:
   m_ObjectHideFlags: 0

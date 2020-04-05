@@ -10,6 +10,8 @@ public class MapControl : MonoBehaviour
 
     GameObject player;
 
+    public GameObject puzzle;
+
     //the individual spell sleot variable declaration
     GameObject slot1;
     GameObject slot2;
@@ -36,6 +38,8 @@ public class MapControl : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("living");
+
+        //puzzle = GameObject.FindGameObjectWithTag("InteractableObject");
 
         //spellSlots = gameObject.transform.parent.transform.Find("SpellSlots").gameObject;
         slot1 = spellSlots.transform.Find("Slot1").gameObject;
@@ -77,6 +81,11 @@ public class MapControl : MonoBehaviour
                         Scene scene = SceneManager.GetActiveScene();
                         if (scene.name == "Room1" || scene.name == "FireTorchRoom1"  || scene.name == "NatureTreeRoom3" || scene.name == "Room3")
                         {
+                            if(puzzle != null)
+                            {
+                                puzzle.GetComponent<BurningScript>().isBurning = true;
+
+                            }
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true;
                         }
                         
