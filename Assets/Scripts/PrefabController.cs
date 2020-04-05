@@ -36,7 +36,7 @@ public class PrefabController : MonoBehaviour
         switch(effect)
         {
             case "Fire":
-                Debug.Log("burn");
+                //Debug.Log("burn");
                 return Fire;
 
             case "Ice":
@@ -73,7 +73,7 @@ public class PrefabController : MonoBehaviour
                 return Fruit;
                 
             default:
-                Debug.Log("not burn");
+                //Debug.Log("not burn");
                 return empty;
                 
         }

@@ -9,6 +9,8 @@ public class BurningScript : MonoBehaviour
 
     bool burnt = false;
 
+    public bool useParticles;
+
     float moveParticle;
 
     public float moveSpeed;
@@ -22,10 +24,25 @@ public class BurningScript : MonoBehaviour
 
     public bool faded;
 
+    Vector4 testColor = Color.white;
+
+    Vector4 oColor;
+    float timer;
+
     // Start is called before the first frame update
     void Start()
     {
        
+    }
+
+    public void setEffect(Vector4 color, bool usePart)
+    {
+        red = color.x;
+        blue = color.y;
+        green = color.z;
+        alpha = color.w;
+
+        useParticles = usePart;
     }
 
     // Update is called once per frame
@@ -34,8 +51,13 @@ public class BurningScript : MonoBehaviour
         if(isBurning && !burnt)
         {
             //Debug.Log("test1");
-
-            particle.Play();
+            //particle.Play();
+            if (useParticles)
+            {
+                //particle.startColor = Color.clear;
+                particle.Play();
+            }
+            
             //particle = Instantiate(particle, transform.position, Quaternion.identity);
             //particle.transform.parent = gameObject.transform;
 
@@ -47,15 +69,27 @@ public class BurningScript : MonoBehaviour
             //Debug.Log("test2");
 
             moveParticle -= moveSpeed * Time.deltaTime;
-            particle.transform.localPosition = new Vector2(0, 0.2f + moveParticle);
-
+            timer += Time.deltaTime;
+            if(useParticles)
+            {
+                particle.transform.localPosition = new Vector2(0, 0.2f + moveParticle);
+            }
+            
+            //if the particle effect is finished change color and opacity
             if(!particle.isEmitting)
             {
                 //Debug.Log("test3");
-                GetComponent<SpriteRenderer>().color = new Vector4(red, green, blue, alpha);
-                if(faded)
+                GetComponent<SpriteRenderer>().color = new Vector4(red, blue, green, alpha);
+                if(faded && useParticles)
                 {
                     alpha -= Time.deltaTime/2;
+                }
+                else if (faded)
+                {
+                    if(timer > 5)
+                    {
+                        alpha -= Time.deltaTime / 2;
+                    }
                 }
 
             }

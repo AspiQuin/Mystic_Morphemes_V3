@@ -21,11 +21,12 @@ public class MapControl : MonoBehaviour
     public ParticleSystem playerRisingPart;
     public ParticleSystem playerPulsePart;
 
+    public GameObject health;
 
     //What is the index of next level
     public int index;
 
-    Vector3 spellPos = new Vector3(0, 3, 0);
+    public Vector3 spellPos = new Vector3(0, 3, 0);
 
     //string[,] array2Db = new string[5, 5] { { "one", "two" },
     //    { "three", "four" },
@@ -67,6 +68,7 @@ public class MapControl : MonoBehaviour
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("Fire");
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dodo)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dodo = true;
@@ -79,9 +81,27 @@ public class MapControl : MonoBehaviour
 
                         //THIS WILL CHANGE SCENE ONE TO SCENE TWO
                         Scene scene = SceneManager.GetActiveScene();
+
+                        //if a spell will cause damage to the player in a given room
+                        if (scene.name == "Fire Column Room2")
+                        {
+                            health.GetComponent<DamageScript>().takeDamage(1);
+                        }
+
+                        //Spell effects are handeled here
                         if (scene.name == "Room1" || scene.name == "FireTorchRoom1"  || scene.name == "NatureTreeRoom3" || scene.name == "Room3")
                         {
-                            if(puzzle != null)
+                            if(scene.name == "Room1")
+                            {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.blue, true);
+                            }
+
+                            if (scene.name == "Room3" || scene.name == "NatureTreeRoom3")
+                            {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.black, true);
+                            }
+
+                            if (puzzle != null)
                             {
                                 puzzle.GetComponent<BurningScript>().isBurning = true;
 
@@ -98,7 +118,8 @@ public class MapControl : MonoBehaviour
 
                         player.GetComponent<PlayerMovement>().dudSpell = true;
 
-                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dore = true;
+                        //If the spell is used for the first time play a particle effect
+                        GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dore = true;
                         
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 3)
@@ -110,6 +131,7 @@ public class MapControl : MonoBehaviour
                         Instantiate(GetComponent<PrefabController>().getPrefab("Lightning"), spellPos, Quaternion.identity);
 
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().domi)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().domi = true;
@@ -123,8 +145,31 @@ public class MapControl : MonoBehaviour
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Lightning"), spellPos, Quaternion.identity);
 
                         Scene scene = SceneManager.GetActiveScene();
+
+                        //if a spell will cause damage to the player in a given room
+                        if (scene.name == "Room2")
+                        {
+                            health.GetComponent<DamageScript>().takeDamage(1);
+                        }
+
+                        //Spell effects are handeled here
                         if (scene.name == "Room1" || scene.name == "FireTorchRoom1"  || scene.name == "NatureTreeRoom3")
                         {
+                            if (scene.name == "Room1")
+                            {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.blue, true);
+                            }
+
+                            if (scene.name == "NatureTreeRoom3")
+                            {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.black, true);
+                            }
+
+                            if (puzzle != null)
+                            {
+                                puzzle.GetComponent<BurningScript>().isBurning = true;
+
+                            }
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true;  //The issue's here...
                         }
                     }
@@ -135,6 +180,8 @@ public class MapControl : MonoBehaviour
                         Debug.Log ("NULL");
 
                         player.GetComponent<PlayerMovement>().dudSpell = true;
+
+                        //If the spell is used for the first time play a particle effect
                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().dofa = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 5)
@@ -155,7 +202,8 @@ public class MapControl : MonoBehaviour
                         //Re Do
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Water"), spellPos, Quaternion.identity);
-                        
+
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().redo)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().redo = true;
@@ -168,9 +216,41 @@ public class MapControl : MonoBehaviour
                         //Should be activating scene change
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Water"), spellPos, Quaternion.identity);
 
+
+
+
+
                         Scene scene = SceneManager.GetActiveScene();
+
+                        //Spell effects are handeled here
+
+                        if (scene.name == "Room1")
+                        {
+                            if (puzzle != null)
+                            {
+                                if (!puzzle.GetComponent<DowsingScript>().shrinks)
+                                {
+
+                                    Instantiate(puzzle.GetComponent<DowsingScript>().spawn, spellPos, Quaternion.identity);
+                                }
+                                puzzle.GetComponent<DowsingScript>().isDowsing = true;
+
+                            }
+                        }
+
+
                         if (scene.name == "Fire Column Room2" || scene.name == "NatureDyingRoom1")
                         {
+                            if (puzzle != null)
+                            {
+                                if (!puzzle.GetComponent<DowsingScript>().shrinks)
+                                {
+
+                                    Instantiate(puzzle.GetComponent<DowsingScript>().spawn, spellPos, Quaternion.identity);
+                                }
+                                puzzle.GetComponent<DowsingScript>().isDowsing = true;
+
+                            }
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true; 
                         }
 
@@ -183,6 +263,7 @@ public class MapControl : MonoBehaviour
 
                         player.GetComponent<PlayerMovement>().dudSpell = true;
 
+                        //If the spell is used for the first time play a particle effect
                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().rere = true;
                     }
                     else if (slot2.GetComponent<SpellChoice>().chosenSpell.GetComponent<DragMorpheme>().morpheme == 3)
@@ -192,6 +273,7 @@ public class MapControl : MonoBehaviour
 
                         Instantiate(GetComponent<PrefabController>().getPrefab("Ice"), spellPos, Quaternion.identity);
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().remi)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().remi = true;
@@ -216,8 +298,8 @@ public class MapControl : MonoBehaviour
                         //Re Fa
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Snow"), spellPos, Quaternion.identity);
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().refa)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().refa = true;
@@ -241,8 +323,9 @@ public class MapControl : MonoBehaviour
                     {
                         //Re So
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
-                        
-                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().reso = true;
+
+                        //If the spell is used for the first time play a particle effect
+                        GameObject.Find("SpellsDone").GetComponent<DoneSpell>().reso = true;
                         Debug.Log ("NULL");
 
                         player.GetComponent<PlayerMovement>().dudSpell = true;
@@ -255,13 +338,13 @@ public class MapControl : MonoBehaviour
                     {
                         //Mi Do
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mido)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mido = true;
-                            playerPulsePart.Play();
-                            playerRisingPart.Play();
+                            //playerPulsePart.Play();
+                            //playerRisingPart.Play();
                         }
 
                         Debug.Log ("NULL");
@@ -273,8 +356,9 @@ public class MapControl : MonoBehaviour
                         //Mi Re
                        // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
-                        
-                         GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mire = true;
+
+                        //If the spell is used for the first time play a particle effect
+                        GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mire = true;
 
                         player.GetComponent<PlayerMovement>().dudSpell = true;
                     }
@@ -283,8 +367,8 @@ public class MapControl : MonoBehaviour
                         //Mi Mi
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Rock"), spellPos, Quaternion.identity);
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mimi)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mimi = true;
@@ -311,6 +395,7 @@ public class MapControl : MonoBehaviour
 
                         player.GetComponent<PlayerMovement>().dudSpell = true;
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mifa)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mifa = true;
@@ -323,13 +408,13 @@ public class MapControl : MonoBehaviour
                         //Mi So
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("Turtle?");
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().miso)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().miso = true;
-                            playerPulsePart.Play();
-                            playerRisingPart.Play();
+                            //playerPulsePart.Play();
+                            //playerRisingPart.Play();
                         }
                     }
                     break;
@@ -341,8 +426,8 @@ public class MapControl : MonoBehaviour
                         //Fa Do
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fado)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fado = true;
@@ -363,8 +448,8 @@ public class MapControl : MonoBehaviour
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Log"), spellPos, logQuaternion);
 
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fare)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fare = true;
@@ -385,8 +470,8 @@ public class MapControl : MonoBehaviour
                         //Fa Mi
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fami)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fami = true;
@@ -401,8 +486,8 @@ public class MapControl : MonoBehaviour
                         //Fa Fa
                         // Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Fruit"), spellPos, Quaternion.identity);
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fafa)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().fafa = true;
@@ -416,8 +501,17 @@ public class MapControl : MonoBehaviour
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Fruit"), spellPos, Quaternion.identity);
 
                         Scene scene = SceneManager.GetActiveScene();
+
+                        
                         if (scene.name == "Room3" || scene.name == "NatureCritterRoom2")
                         {
+
+                            if (puzzle != null)
+                            {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.white, false);
+                                puzzle.GetComponent<BurningScript>().isBurning = true;
+
+                            }
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true; 
                         }
                     }
@@ -426,8 +520,8 @@ public class MapControl : MonoBehaviour
                         //Fa So
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Flower"), spellPos, Quaternion.identity);
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().faso)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().faso = true;
@@ -455,8 +549,8 @@ public class MapControl : MonoBehaviour
                         //So Do
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().sodo)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().sodo = true;
@@ -487,8 +581,8 @@ public class MapControl : MonoBehaviour
                         //So Mi
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Debug.Log ("NULL");
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().somi)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().somi = true;
@@ -505,8 +599,8 @@ public class MapControl : MonoBehaviour
                         spellPos.y = 2.5f;
 
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Bread"), spellPos, Quaternion.identity);
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().sofa)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().sofa = true;
@@ -519,8 +613,15 @@ public class MapControl : MonoBehaviour
                         Debug.Log ("Bread");
                         //turns scene 3 to end
                         Scene scene = SceneManager.GetActiveScene();
+                        
                         if (scene.name == "Room3" || scene.name == "NatureCritterRoom2")
                         {
+                            if (puzzle != null)
+                            {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.white, false);
+                                puzzle.GetComponent<BurningScript>().isBurning = true;
+
+                            }
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true;
                            
                         }
@@ -530,8 +631,8 @@ public class MapControl : MonoBehaviour
                         //So So
                         //Debug.Log(slot1.GetComponent<SpellChoice>().chosenSpell.name + " " + slot2.GetComponent<SpellChoice>().chosenSpell.name);
                         Instantiate(GetComponent<PrefabController>().getPrefab("Critter"), spellPos, Quaternion.identity);
-                        
 
+                        //If the spell is used for the first time play a particle effect
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().soso)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().soso = true;

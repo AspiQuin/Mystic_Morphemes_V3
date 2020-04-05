@@ -16,9 +16,11 @@ public class PlayerMovement : MonoBehaviour
 
     public bool changeScene = false;
 
-    float timer = 8.0f;
+    float timer = 6.0f;
 
-    float delay = 1.0f;
+    float delay = 0.5f;
+
+    public GameObject health;
 
 
     float counter;
@@ -31,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if player is dead play death animation
+        if(health.GetComponent<HealthDisplay>().health <= 0)
+        {
+            animator.SetBool("dead", true);
+        }
 
         if(dudSpell)
         {
@@ -42,9 +49,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        //comunicates with the animator
         animator.SetBool("walking", walkFrw);
 
         animator.SetBool("dud", dudSpell);
+
+        //moves player
         if (walkFrw)
         {
             delay -= Time.deltaTime;
@@ -56,14 +66,14 @@ public class PlayerMovement : MonoBehaviour
                 if (transform.position.y > stopHeight)
                 {
                     walkFrw = false;
-                    delay = 3;
+                    delay = 1.5f;
                 }
                 
             }
         }
         if (changeScene)
         {
-            Debug.Log("changeScene");
+            //Debug.Log("changeScene");
             timer -= Time.deltaTime;
             if (timer < 0)
             {
