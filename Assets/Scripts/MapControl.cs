@@ -483,15 +483,13 @@ public class MapControl : MonoBehaviour
 
                         Scene scene = SceneManager.GetActiveScene();
 
-                        if (scene.name == "Room3" )
-                        {
-                            puzzle.GetComponent<BurningScript>().setEffect(Color.white, false);
-                        }
-
+                        
                         if (scene.name == "Room3" || scene.name == "NatureCritterRoom2")
                         {
+
                             if (puzzle != null)
                             {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.white, false);
                                 puzzle.GetComponent<BurningScript>().isBurning = true;
 
                             }
@@ -596,14 +594,12 @@ public class MapControl : MonoBehaviour
                         Debug.Log ("Bread");
                         //turns scene 3 to end
                         Scene scene = SceneManager.GetActiveScene();
-                        if (scene.name == "Room3")
-                        {
-                            puzzle.GetComponent<BurningScript>().setEffect(Color.white, false);
-                        }
+                        
                         if (scene.name == "Room3" || scene.name == "NatureCritterRoom2")
                         {
                             if (puzzle != null)
                             {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.white, false);
                                 puzzle.GetComponent<BurningScript>().isBurning = true;
 
                             }

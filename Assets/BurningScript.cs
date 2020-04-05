@@ -70,7 +70,11 @@ public class BurningScript : MonoBehaviour
 
             moveParticle -= moveSpeed * Time.deltaTime;
             timer += Time.deltaTime;
-            particle.transform.localPosition = new Vector2(0, 0.2f + moveParticle);
+            if(useParticles)
+            {
+                particle.transform.localPosition = new Vector2(0, 0.2f + moveParticle);
+            }
+            
 
             if(!particle.isEmitting)
             {

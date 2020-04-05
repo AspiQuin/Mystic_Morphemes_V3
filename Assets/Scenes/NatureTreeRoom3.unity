@@ -3416,7 +3416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellSlots: {fileID: 2021310031}
-  puzzle: {fileID: 0}
+  puzzle: {fileID: 1937453848}
   playerRisingPart: {fileID: 2012583746}
   playerPulsePart: {fileID: 2012583745}
   health: {fileID: 1570556901}
