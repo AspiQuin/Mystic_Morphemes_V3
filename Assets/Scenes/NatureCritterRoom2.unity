@@ -847,9 +847,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellSlots: {fileID: 0}
+  puzzle: {fileID: 0}
   playerRisingPart: {fileID: 0}
   playerPulsePart: {fileID: 0}
+  health: {fileID: 0}
   index: 0
+  spellPos: {x: 0, y: 3, z: 0}
 --- !u!1 &344491542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1217,7 @@ RectTransform:
   m_GameObject: {fileID: 417725612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 167933097}
   m_Father: {fileID: 1765113147}
@@ -1222,7 +1225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 93.4}
+  m_AnchoredPosition: {x: 0.000030518, y: 80}
   m_SizeDelta: {x: 172.4, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &417725614
@@ -3100,7 +3103,7 @@ RectTransform:
   m_GameObject: {fileID: 990332959}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1692388699}
   m_Father: {fileID: 1765113147}
@@ -3108,7 +3111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -98.3}
+  m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 174, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &990332961
@@ -5912,9 +5915,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellSlots: {fileID: 1765113146}
+  puzzle: {fileID: 241039516}
   playerRisingPart: {fileID: 1609524430}
   playerPulsePart: {fileID: 1609524429}
+  health: {fileID: 367833287}
   index: 3
+  spellPos: {x: 0, y: 3, z: 0}
 --- !u!4 &1445745432
 Transform:
   m_ObjectHideFlags: 0
@@ -6327,6 +6333,11 @@ PrefabInstance:
       propertyPath: stopHeight
       value: -0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2308258727640986855, guid: 80e106854e5ec864faffdc60a6b533f3,
+        type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1051425290}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80e106854e5ec864faffdc60a6b533f3, type: 3}
 --- !u!198 &1609524429 stripped
@@ -6872,7 +6883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.4392157}
+  m_Color: {r: 1, g: 0.93333334, b: 0.6784314, a: 0.4392157}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7626,6 +7637,7 @@ MonoBehaviour:
   - {fileID: 593035421}
   - {fileID: 591677113}
   healthUI: {fileID: 1051425290}
+  timer: 3
 --- !u!4 &2118809838
 Transform:
   m_ObjectHideFlags: 0
@@ -7707,7 +7719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 0.4392157}
+  m_Color: {r: 1, g: 0.93333334, b: 0.6784314, a: 0.4392157}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

@@ -21,11 +21,12 @@ public class MapControl : MonoBehaviour
     public ParticleSystem playerRisingPart;
     public ParticleSystem playerPulsePart;
 
+    public GameObject health;
 
     //What is the index of next level
     public int index;
 
-    Vector3 spellPos = new Vector3(0, 3, 0);
+    public Vector3 spellPos = new Vector3(0, 3, 0);
 
     //string[,] array2Db = new string[5, 5] { { "one", "two" },
     //    { "three", "four" },
@@ -79,9 +80,24 @@ public class MapControl : MonoBehaviour
 
                         //THIS WILL CHANGE SCENE ONE TO SCENE TWO
                         Scene scene = SceneManager.GetActiveScene();
+                        if (scene.name == "Fire Column Room2")
+                        {
+                            health.GetComponent<DamageScript>().takeDamage(1);
+                        }
+
                         if (scene.name == "Room1" || scene.name == "FireTorchRoom1"  || scene.name == "NatureTreeRoom3" || scene.name == "Room3")
                         {
-                            if(puzzle != null)
+                            if(scene.name == "Room1")
+                            {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.blue, true);
+                            }
+
+                            if (scene.name == "Room3" || scene.name == "NatureTreeRoom3")
+                            {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.black, true);
+                            }
+
+                            if (puzzle != null)
                             {
                                 puzzle.GetComponent<BurningScript>().isBurning = true;
 
@@ -123,8 +139,29 @@ public class MapControl : MonoBehaviour
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Lightning"), spellPos, Quaternion.identity);
 
                         Scene scene = SceneManager.GetActiveScene();
+
+                        if(scene.name == "Room2")
+                        {
+                            health.GetComponent<DamageScript>().takeDamage(1);
+                        }
+
                         if (scene.name == "Room1" || scene.name == "FireTorchRoom1"  || scene.name == "NatureTreeRoom3")
                         {
+                            if (scene.name == "Room1")
+                            {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.blue, true);
+                            }
+
+                            if (scene.name == "NatureTreeRoom3")
+                            {
+                                puzzle.GetComponent<BurningScript>().setEffect(Color.black, true);
+                            }
+
+                            if (puzzle != null)
+                            {
+                                puzzle.GetComponent<BurningScript>().isBurning = true;
+
+                            }
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true;  //The issue's here...
                         }
                     }
@@ -168,9 +205,38 @@ public class MapControl : MonoBehaviour
                         //Should be activating scene change
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Water"), spellPos, Quaternion.identity);
 
+
+
+
+
                         Scene scene = SceneManager.GetActiveScene();
+
+                        if (scene.name == "Room1")
+                        {
+                            if (puzzle != null)
+                            {
+                                if (!puzzle.GetComponent<DowsingScript>().shrinks)
+                                {
+
+                                    Instantiate(puzzle.GetComponent<DowsingScript>().spawn, spellPos, Quaternion.identity);
+                                }
+                                puzzle.GetComponent<DowsingScript>().isDowsing = true;
+
+                            }
+                        }
+
                         if (scene.name == "Fire Column Room2" || scene.name == "NatureDyingRoom1")
                         {
+                            if (puzzle != null)
+                            {
+                                if (!puzzle.GetComponent<DowsingScript>().shrinks)
+                                {
+
+                                    Instantiate(puzzle.GetComponent<DowsingScript>().spawn, spellPos, Quaternion.identity);
+                                }
+                                puzzle.GetComponent<DowsingScript>().isDowsing = true;
+
+                            }
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true; 
                         }
 
@@ -260,8 +326,8 @@ public class MapControl : MonoBehaviour
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mido)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().mido = true;
-                            playerPulsePart.Play();
-                            playerRisingPart.Play();
+                            //playerPulsePart.Play();
+                            //playerRisingPart.Play();
                         }
 
                         Debug.Log ("NULL");
@@ -328,8 +394,8 @@ public class MapControl : MonoBehaviour
                         if (!GameObject.Find("SpellsDone").GetComponent<DoneSpell>().miso)
                         {
                             GameObject.Find("SpellsDone").GetComponent<DoneSpell>().miso = true;
-                            playerPulsePart.Play();
-                            playerRisingPart.Play();
+                            //playerPulsePart.Play();
+                            //playerRisingPart.Play();
                         }
                     }
                     break;
@@ -416,8 +482,19 @@ public class MapControl : MonoBehaviour
                         chosenPrefab = Instantiate(GetComponent<PrefabController>().getPrefab("Fruit"), spellPos, Quaternion.identity);
 
                         Scene scene = SceneManager.GetActiveScene();
+
+                        if (scene.name == "Room3" )
+                        {
+                            puzzle.GetComponent<BurningScript>().setEffect(Color.white, false);
+                        }
+
                         if (scene.name == "Room3" || scene.name == "NatureCritterRoom2")
                         {
+                            if (puzzle != null)
+                            {
+                                puzzle.GetComponent<BurningScript>().isBurning = true;
+
+                            }
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true; 
                         }
                     }
@@ -519,8 +596,17 @@ public class MapControl : MonoBehaviour
                         Debug.Log ("Bread");
                         //turns scene 3 to end
                         Scene scene = SceneManager.GetActiveScene();
+                        if (scene.name == "Room3")
+                        {
+                            puzzle.GetComponent<BurningScript>().setEffect(Color.white, false);
+                        }
                         if (scene.name == "Room3" || scene.name == "NatureCritterRoom2")
                         {
+                            if (puzzle != null)
+                            {
+                                puzzle.GetComponent<BurningScript>().isBurning = true;
+
+                            }
                             chosenPrefab.GetComponent<spellAnimation>().changeScene = true;
                            
                         }

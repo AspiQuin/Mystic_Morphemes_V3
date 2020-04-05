@@ -529,12 +529,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBurning: 0
+  useParticles: 0
   moveSpeed: 0.08
   particle: {fileID: 749792007}
-  red: 0
-  green: 0
-  blue: 0
-  faded: 0
+  red: 255
+  green: 255
+  blue: 255
+  faded: 1
 --- !u!1 &176339569
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +638,7 @@ RectTransform:
   m_GameObject: {fileID: 180150056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1766995372}
   m_Father: {fileID: 1920630654}
@@ -645,7 +646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 93.4}
+  m_AnchoredPosition: {x: 0.000030518, y: 80}
   m_SizeDelta: {x: 172.4, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &180150058
@@ -3795,7 +3796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 0.4392157}
+  m_Color: {r: 1, g: 0.93333334, b: 0.6784314, a: 0.4392157}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3848,20 +3849,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livingObjects:
-  - {fileID: 0}
+  - {fileID: 983824694}
   - {fileID: 1128157754}
   - {fileID: 1716617159}
   - {fileID: 2094504283}
   - {fileID: 1834006154}
   - {fileID: 1197581631}
   - {fileID: 1113885515}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1920630653}
+  - {fileID: 180150056}
+  - {fileID: 1209178044}
   deathObjects:
   - {fileID: 45479016}
   - {fileID: 978866302}
   healthUI: {fileID: 1766416966}
+  timer: 3
 --- !u!4 &874430411
 Transform:
   m_ObjectHideFlags: 0
@@ -3932,7 +3934,9 @@ MonoBehaviour:
   puzzle: {fileID: 0}
   playerRisingPart: {fileID: 0}
   playerPulsePart: {fileID: 0}
+  health: {fileID: 0}
   index: 0
+  spellPos: {x: 0, y: 3, z: 0}
 --- !u!1 &978866302
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,6 +4048,11 @@ PrefabInstance:
       propertyPath: stopHeight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2308258727640986855, guid: 80e106854e5ec864faffdc60a6b533f3,
+        type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1766416966}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80e106854e5ec864faffdc60a6b533f3, type: 3}
 --- !u!198 &983824692 stripped
@@ -4055,6 +4064,12 @@ ParticleSystem:
 --- !u!198 &983824693 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2308258726758632833, guid: 80e106854e5ec864faffdc60a6b533f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 983824691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &983824694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2308258727640986851, guid: 80e106854e5ec864faffdc60a6b533f3,
     type: 3}
   m_PrefabInstance: {fileID: 983824691}
   m_PrefabAsset: {fileID: 0}
@@ -4845,7 +4860,7 @@ RectTransform:
   m_GameObject: {fileID: 1209178044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1463101046}
   m_Father: {fileID: 1920630654}
@@ -4853,7 +4868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -98.3}
+  m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 174, y: 75.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209178046
@@ -7386,7 +7401,9 @@ MonoBehaviour:
   puzzle: {fileID: 147054406}
   playerRisingPart: {fileID: 983824693}
   playerPulsePart: {fileID: 983824692}
+  health: {fileID: 1294138907}
   index: 6
+  spellPos: {x: 0, y: 3, z: 0}
 --- !u!4 &2021424091
 Transform:
   m_ObjectHideFlags: 0
@@ -7667,7 +7684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.4392157}
+  m_Color: {r: 1, g: 0.93333334, b: 0.6784314, a: 0.4392157}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

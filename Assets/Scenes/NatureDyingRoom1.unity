@@ -1456,6 +1456,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &663503866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663503868}
+  - component: {fileID: 663503867}
+  m_Layer: 0
+  m_Name: Damage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &663503867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663503866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2db649f3d275344a59ff2e72bd656b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthUI: {fileID: 1949203967}
+--- !u!4 &663503868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663503866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 376.04626, y: 94.846245, z: -30.4375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &680095433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,6 +1777,7 @@ MonoBehaviour:
   - {fileID: 653251324}
   - {fileID: 1812817254}
   healthUI: {fileID: 1949203967}
+  timer: 3
 --- !u!4 &725678605
 Transform:
   m_ObjectHideFlags: 0
@@ -1814,7 +1859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 0.4392157}
+  m_Color: {r: 1, g: 0.93333334, b: 0.6784314, a: 0.4392157}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2281,7 +2326,7 @@ RectTransform:
   m_GameObject: {fileID: 840103169}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 344446572}
   m_Father: {fileID: 1642256374}
@@ -2289,7 +2334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 93.4}
+  m_AnchoredPosition: {x: 0.000030518, y: 80}
   m_SizeDelta: {x: 172.4, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840103171
@@ -2435,7 +2480,7 @@ RectTransform:
   m_GameObject: {fileID: 842743530}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1396330265}
   m_Father: {fileID: 1642256374}
@@ -2443,7 +2488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -98.3}
+  m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 174, y: 75.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &842743532
@@ -3264,6 +3309,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2308258727640986855, guid: 80e106854e5ec864faffdc60a6b533f3,
+        type: 3}
+      propertyPath: stopHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308258727640986855, guid: 80e106854e5ec864faffdc60a6b533f3,
+        type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1949203967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80e106854e5ec864faffdc60a6b533f3, type: 3}
 --- !u!198 &951571022 stripped
@@ -3621,9 +3676,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellSlots: {fileID: 0}
+  puzzle: {fileID: 0}
   playerRisingPart: {fileID: 0}
   playerPulsePart: {fileID: 0}
+  health: {fileID: 0}
   index: 0
+  spellPos: {x: 0, y: 3, z: 0}
 --- !u!1 &1100607396
 GameObject:
   m_ObjectHideFlags: 0
@@ -3896,9 +3954,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellSlots: {fileID: 1642256373}
+  puzzle: {fileID: 1809859643}
   playerRisingPart: {fileID: 951571023}
   playerPulsePart: {fileID: 951571022}
+  health: {fileID: 663503866}
   index: 3
+  spellPos: {x: -0.1232504, y: -0.45, z: 0}
 --- !u!4 &1187036830
 Transform:
   m_ObjectHideFlags: 0
@@ -6652,6 +6713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1809859646}
   - component: {fileID: 1809859645}
+  - component: {fileID: 1809859644}
   m_Layer: 0
   m_Name: Dried Flower
   m_TagString: Untagged
@@ -6659,6 +6721,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1809859644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809859643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5abcab58848c14880c55cded344127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDowsing: 0
+  changeSpeed: 0
+  spawn: {fileID: 2667794702351612759, guid: fd22a3a1034e24e448fd494639689deb, type: 3}
+  damage: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  shrinks: 0
 --- !u!212 &1809859645
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7700,7 +7782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.4392157}
+  m_Color: {r: 1, g: 0.93333334, b: 0.6784314, a: 0.4392157}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

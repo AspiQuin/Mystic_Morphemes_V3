@@ -17,6 +17,8 @@ public class spellAnimation : MonoBehaviour
     public ParticleSystem embers;
 
     public bool permenent;
+
+    bool once = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +45,7 @@ public class spellAnimation : MonoBehaviour
             }
             else
             {
-                if(destroyTimer >= 10f)
+                if(destroyTimer >= 13.5f)
                 {
                     Destroy(gameObject);
                 }
@@ -53,19 +55,28 @@ public class spellAnimation : MonoBehaviour
                 
                 Destroy(puzzle);
 
-                if(scene.name == "Room3" || scene.name == "NatureTreeRoom3" || scene.name == "FireLavaRoom3")
+                if(scene.name == "Room3" || scene.name == "NatureTreeRoom3" )
                 {
                     player.GetComponent<PlayerMovement>().stopHeight = 2.0f;
 
+                }
+                else if (scene.name == "FireLavaRoom3")
+                {
+                    player.GetComponent<PlayerMovement>().stopHeight = 3.0f;
                 }
                 else
                 {
                     player.GetComponent<PlayerMovement>().stopHeight = 10.0f;
 
                 }
-                player.GetComponent<PlayerMovement>().walkFrw = true;
+                if(once)
+                {
+                    player.GetComponent<PlayerMovement>().walkFrw = true;
 
-                player.GetComponent<PlayerMovement>().changeScene = true;
+                    player.GetComponent<PlayerMovement>().changeScene = true;
+                    once = false;
+                }
+                
                 
             }
         }
